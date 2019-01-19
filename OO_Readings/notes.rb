@@ -1,0 +1,22 @@
+=begin
+Intro to OOP book
+Encapsulation – hiding pieces of functionality and making it unavailable to the rest of the code base. It is a form of data protection. Defines the boundaries in your code and allows you to reach new levels of complexity. Does this by creating objects and exposing those objects to methods. 
+Polymorphism – the ability for data to be represented as many different types. This is done by inheritance and mixing in modules. 
+Objects – Objects are types of data created from classes. The classes are what define the objects. Creating a new object (or instance) from a class is called instantiation. 
+Modules – Modules can hold a collections of methods or classes, or both. This is why they are useful for namespacing. They are included in a class by using the ‘include’ method invocation.
+Method lookup – whenever a method is called in Ruby, there is a certain method lookup path that is follows to find the method definition. We can call the ‘ancestors’ method on any class to find out the lookup chain. Usually, the method lookup chain is the class, any modules in the class, the Superclass, then any modules in that, then Object class, Kernal class, and then BasicObject class
+Objects have states and behaviors. States track attributes, and behaviors are what the object can do. Different objects will have different attributes but can perform the same behaviors. The initialize method gets called every time a new object is created. ‘new’ is a class method that leads us to the ‘initialize’ instance method. Instance variables keep track of the states for each object. 
+Calling methods with self – to disambiguate from creating a local variable (and the intention is to use a setter method) we need to use self.name (where name is instance variable) to tell Ruby that we are calling a method and not creating a local variable. 
+Class methods – methods that we can call directly on the class itself, without having to instantiate any objects. When defining a class method, we prepend the method name with the word ‘self’. Class methods are for functionality that doesn’t pertain to any individual objects. Objects contain states, and if we have a method that does not deal with states, then we can use a class method. 
+Class variables – variables capture information related to entire classes and not specific instances. Created by prepending ‘@@’. Class variables can be be accessed within an instance method. We can then make a class method that serves as a getter to the class variable.
+to_s method is always called when ‘puts’ method is called and when string interpolation is used. 
+More about self – Self is used to specify a certain scope for the program. Self refers to different things depending on where it is used. 
+From within the class, when an instance method calls ‘self’, it returns the calling object. 
+When ‘self’ is used inside a class but outside an instance method, it returns the class itself. 
+‘Self’ is a way of being explicit about what our program is referencing and what are intentions are as far as behavior. 
+Inheritance – Subclass < Superclass. Can be a great way to remove duplication in code. A class may only inherit from one Superclass. However, there is no limit to how many modules you can mix in. 
+Super – Ruby provides a built in function called ‘super’ that allows us to call methods up the inheritance heirarchy. When you call ‘super’ from within a method, it will search the inheritance heirarchy for a method by the same name and invoke it. In addition, ‘super’ automatically forwards the arguments that are passed into the method to the other method. This can be changed by adding arguments to ‘super’ inside the method. 
+Public methods – a method that is available to anyone who knows either the class name or the object’s name. These methods are readily available for the rest of the program to use. 
+Private methods – are methods that are below the reserved word ‘private’. Private methods are only accessible from other methods in the class. Private methods cannot be prepended with ‘self’ because instances (objects) do not have access to private methods. They are only accessible inside the class when called without ‘self’.
+Protected methods – these methods are not as private because they can be accessed with ‘self’. However, they are like private methods because they cannot be called outside of the class. In other words, they can only be used inside the class, but they can be prepended with ‘self’ unlike private methods. 
+=end
